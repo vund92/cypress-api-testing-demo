@@ -1,0 +1,37 @@
+﻿no.,testcase,action,format,list,srsearch,continue,formatversion,sroffset,message
+1,Execute API call with valid required parameters,query,json,search,Software%20Testing,,,,
+2,Execute API call with valid required parameters and valid optional parameters,query,json,search,Software%20Testing,%7C%7C,2,10,
+3,Execute API call with srsearch parameter having no value,query,json,search,,,,,"{
+    ""error"": {
+        ""code"": ""missingparam"",
+        ""info"": ""The \""srsearch\"" parameter must be set."",
+        ""*"": ""See https://en.wikipedia.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.""
+    },
+    ""servedby"": ""mw2376""
+}"
+4,Execute API call with missing required parameters,,json,search,Software%20Testing,,,,"{
+    ""error"": {
+        ""code"": ""badvalue"",
+        ""info"": ""Unrecognized value for parameter \""action\"": ."",
+        ""*"": ""See https://en.wikipedia.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.""
+    },
+    ""servedby"": ""mw2451""
+}"
+5,Execute API call with invalid query parameters,querywrong,json,search,Software%20Testing,,,,"{
+    ""error"": {
+        ""code"": ""badvalue"",
+        ""info"": ""Unrecognized value for parameter \""action\"": querywrong."",
+        ""*"": ""See https://en.wikipedia.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.""
+    },
+    ""servedby"": ""mw2294""
+}"
+6,Execute API call with endpoint longer than 255 characters,query,json,search,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc,,,,"{
+    ""batchcomplete"": """",
+    ""query"": {
+        ""searchinfo"": {
+            ""totalhits"": 0
+        },
+        ""search"": []
+    }
+}"
+7,Execute API call with illegal characters in parameters,query,json,search,$5000 42-43,,,,
